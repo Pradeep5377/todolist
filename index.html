@@ -1,95 +1,96 @@
-    <style>
-        body{
-            font-family: 'Roboto', sans-serif;
-            background-color: rebeccapurple;
-            color:rebeccapurple
-        }
-        div{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color:white
+<style>
+    body{
+        font-family: 'Roboto', sans-serif;
+        background-color: rebeccapurple;
+        color:rebeccapurple
+    }
+    div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color:white
+    }
+    #inputbox{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        border-radius: 7px;
+    }
 
-        }
-        #inputbox{
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            border-radius: 7px;
-        
-            
-        }
+    #input {
+        background-color: whitesmoke;
+        color: black;
+        width: 250px; 
+        height: 40px; 
+        padding: 10px; 
+        font-size: 16px;
+        border-radius: 5px;
+        transition: box-shadow 0.1s ease-in;
+    }
+    #input::placeholder{
+        color: black;
+    }
+    #input:hover{
+        border: none;
+    }
+    .btn {
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        width: 80px; 
+        height: 40px; 
+        padding: 10px; 
+        font-size: 16px; 
+        background-color: whitesmoke;
+        color: black;
+        border: 2px solid rebeccapurple; 
+        border-radius: 5px; 
+        transition: background-color 0.3s ease, border 0.3s ease; 
+        cursor: pointer;
+    }
 
-        #input {
-            background-color: whitesmoke;
-            color: black;
-            width: 250px; 
-            height: 40px; 
-            padding: 10px; 
-            font-size: 16px;
-            border-radius: 5px;
-            transition: box-shadow 0.1s ease-in;
-            
-        }
-        #input::placeholder{
-            color: black;
-        }
-        #input:hover{
-            border: none;
-        }
-        .btn {
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
-    width: 80px; 
-    height: 40px; 
-    padding: 10px; 
-    font-size: 16px; 
-    background-color: whitesmoke;
-    color: black;
-    border: 2px solid rebeccapurple; 
-    border-radius: 5px; 
-    transition: background-color 0.3s ease, border 0.3s ease; /* Transition effect */
-    cursor: pointer;
-}
+    .btn:hover {
+        background-color: rebeccapurple;
+        color: #fff;
+        border-color: #fff; 
+        border-radius: 13px; 
+        transition: 0.8s; 
+    }
 
-.btn:hover {
-    background-color: rebeccapurple;
-    color: #fff;
-    border-color: #fff; 
-    border-radius: 13px; 
-    transition: 0.8s; 
-}
+    .remove {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background-color: whitesmoke;
+        color: black;
+        width: 80px; 
+        height: 40px; 
+        padding: 10px; 
+        font-size: 16px;
+        border: 2px solid rebeccapurple; 
+        border-radius: 5px; 
+        transition: background-color 0.3s ease, border 0.3s ease; 
+        cursor: pointer;
+        margin-left: 40px;
+        display: inline-flex; 
+        align-items: center; 
+        justify-content: center;
+    }
 
-.remove {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: whitesmoke;
-    color: black;
-    width: 80px; 
-    height: 40px; 
-    padding: 10px; 
-    font-size: 16px;
-    border: 2px solid rebeccapurple; /* Add border */
-    border-radius: 5px; /* Initial border radius */
-    transition: background-color 0.3s ease, border 0.3s ease; /* Transition effect */
-    cursor: pointer;
-    margin-left: 40px;
-    margin-bottom: 20px;
-    display: inline-flex; 
-    align-items: center; 
-    justify-content: center;
-}
+    .remove:hover {
+        background-color: rebeccapurple;
+        color: #fff;
+        border-color: #fff; 
+        border-radius: 13px; 
+        transition: 0.8s;
+    }
 
-.remove:hover {
-    background-color: rebeccapurple;
-    color: #fff;
-    border-color: #fff; /* Change border color on hover */
-    border-radius: 13px; /* Adjust border-radius if needed */
-    transition: 0.8s;
-}
-        
-    </style>
+    #un li { 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        width: 350px; 
+    }
+</style>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -134,10 +135,10 @@
     var un = document.getElementById("un")
     var input = document.getElementById("input")
     function add(){
-        var li = document.createElement("ul")
+        var li = document.createElement("li")
         li.innerHTML = input.value +" " +"<button onclick='delete1(event)' class='remove'>Remove</button>"
         un.append(li)
-        input.value =""
+        input.value ="" 
     }
     function delete1(event){
         event.target.parentElement.remove()
